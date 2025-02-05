@@ -16,7 +16,7 @@ corpus:
   weights: [1, 0]
   args:
     # length augmentable corpus
-    - paths: [resources/corpus/freq10k.txt, resources/corpus/israeli_place_names.txt]
+    - paths: [resources/corpus/freq_10k.txt, resources/corpus/israeli_place_names.txt]
       weights: [4, 1]
       min_length: 1
       max_length: 25
