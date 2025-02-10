@@ -1,7 +1,7 @@
 count: 100
 
 corpus:
-  paths: [resources/corpus/mjsynth.txt]
+  paths: [resources/corpus/financial_corpus.txt]
   weights: [1]
   min_length: 1
   max_length: 25
@@ -10,20 +10,20 @@ corpus:
 font:
   paths: [resources/font]
   weights: [1]
-  size: [32, 64]
-  bold: 0.5
+  size: [11, 26]
+  bold: 0.35
 
 color:
   rgb: [[0, 0], [0, 0], [0, 0]]
-  alpha: [1, 1]
+  alpha: [.15, 1]
   grayscale: 0
 
 layout:
   length: [1024, 1024]
-  space: [16, 32]
+  space: [8, 20]
   line_space: [0, 16]
   align: [left, center, right, justify]
   line_align: [middle]
-  ltr: true
+  ltr: false
   ttb: true
   vertical: false
