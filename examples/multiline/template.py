@@ -8,7 +8,7 @@ import os
 
 import numpy as np
 from PIL import Image
-
+import random
 from synthtiger import components, layers, templates
 
 
@@ -24,6 +24,7 @@ class Multiline(templates.Template):
         self.layout = components.FlowLayout(**config.get("layout", {}))
 
     def generate(self):
+        self.count = random.choice(range(1,50) if random.random() > .5 else range(1,3))
         texts = [self.corpus.data(self.corpus.sample()) for _ in range(self.count)]
         fonts = [self.font.sample() for _ in range(self.count)]
         color = self.color.data(self.color.sample())
