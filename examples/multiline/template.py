@@ -24,7 +24,7 @@ class Multiline(templates.Template):
         self.layout = components.FlowLayout(**config.get("layout", {}))
 
     def generate(self):
-        self.count = random.choice(range(1,50) if random.random() > .5 else range(1,3))
+        self.count = random.choice(range(1, 30))
         texts = [self.corpus.data(self.corpus.sample()) for _ in range(self.count)]
         fonts = [self.font.sample() for _ in range(self.count)]
         color = self.color.data(self.color.sample())
@@ -37,7 +37,7 @@ class Multiline(templates.Template):
         )
         self.layout.apply(text_group)
 
-        bg_layer = layers.RectLayer(text_group.size, (255, 255, 255, 255))
+        bg_layer = layers.RectLayer(text_group.size, (random.randint(200,255),random.randint(200,255),random.randint(200,255),random.randint(200,255)))
         bg_layer.topleft = text_group.topleft
 
         image = (text_group + bg_layer).output()
@@ -65,7 +65,7 @@ class Multiline(templates.Template):
 
         os.makedirs(os.path.dirname(image_path), exist_ok=True)
         image = Image.fromarray(image[..., :3].astype(np.uint8))
-        image.save(image_path, quality=95)
+        image.save(image_path, quality=185)
 
         self.gt_file.write(f"{image_key}\t{label}\n")
 
