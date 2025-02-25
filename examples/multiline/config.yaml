@@ -1,21 +1,22 @@
 count: 100
+coord_output: true
 
 corpus:
-  paths: [resources/corpus/financial_corpus.txt]
-  weights: [1]
+  paths: [resources/corpus/freq_10k.txt, resources/corpus/financial_corpus.txt, resources/corpus/adjectives.txt]
+  weights: [1,1,1]
   min_length: 1
-  max_length: 25
+  max_length: 30
   textcase: [lower, upper, capitalize]
 
 font:
   paths: [resources/font]
   weights: [1]
-  size: [11, 26]
-  bold: 0.35
+  size: [24, 36]
+  bold: 0.4
 
 color:
   rgb: [[0, 0], [0, 0], [0, 0]]
-  alpha: [.15, 1]
+  alpha: [.5, 1]
   grayscale: 0
 
 layout:
@@ -23,7 +24,7 @@ layout:
   space: [8, 20]
   line_space: [0, 16]
   align: [left, center, right, justify]
-  line_align: [middle]
+  line_align: [middle, left, right]
   ltr: false
   ttb: true
   vertical: false
